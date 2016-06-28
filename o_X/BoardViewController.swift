@@ -7,8 +7,8 @@ import UIKit
 
 class BoardViewController: UIViewController {
 
-    @IBOutlet weak var newGameButton: UIButton!
     // Create additional IBOutlets here.
+    @IBOutlet weak var newGameButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
