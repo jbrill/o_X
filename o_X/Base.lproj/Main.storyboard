@@ -9,7 +9,7 @@
         <!--Board View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="BoardViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BoardViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,6 +34,9 @@
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" red="0.80392156862745101" green="0.54509803921568623" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="newGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Nw-1y-ojy"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-RS-XfY" userLabel="TTT">
                                 <rect key="frame" x="175" y="156" width="250" height="250"/>
@@ -76,8 +79,11 @@
                                             <constraint firstAttribute="height" constant="85" id="EoB-Sw-voI"/>
                                             <constraint firstAttribute="width" constant="85" id="dci-eP-6eF"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZJS-HZ-lY3"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-Gp-qxt" userLabel="TM">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-Gp-qxt" userLabel="TM">
                                         <rect key="frame" x="83" y="0.0" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="99e-IV-9NJ"/>
@@ -91,55 +97,79 @@
                                                 <exclude reference="mFk-Ab-ruG"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOJ-9E-E7T"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCu-Xc-LK3" userLabel="TR">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCu-Xc-LK3" userLabel="TR">
                                         <rect key="frame" x="165" y="0.0" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="9dc-in-zU1"/>
                                             <constraint firstAttribute="height" constant="85" id="y4w-5h-rvF"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSS-C1-4V6"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G19-iD-kTS" userLabel="MR">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G19-iD-kTS" userLabel="MR">
                                         <rect key="frame" x="165" y="83" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="WaV-CP-WYb"/>
                                             <constraint firstAttribute="width" constant="85" id="fxW-J6-7KX"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gY-yv-4kI"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peu-aP-PCw" userLabel="MM">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peu-aP-PCw" userLabel="MM">
                                         <rect key="frame" x="83" y="83" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="Hin-gy-JQb"/>
                                             <constraint firstAttribute="width" constant="85" id="VmY-Y6-xid"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ixg-Hj-CeD"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YV5-Ow-EAK" userLabel="ML">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YV5-Ow-EAK" userLabel="ML">
                                         <rect key="frame" x="0.0" y="83" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="cvS-jJ-Ecz"/>
                                             <constraint firstAttribute="width" constant="85" id="kc0-JP-dhK"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ndh-ck-nCs"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-LR-oDu" userLabel="LL">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-LR-oDu" userLabel="LL">
                                         <rect key="frame" x="0.0" y="165" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="OMY-iP-gHh"/>
                                             <constraint firstAttribute="width" constant="85" id="aA6-Pm-G9y"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ckw-7t-81K"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMX-mB-WZF" userLabel="LM">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMX-mB-WZF" userLabel="LM">
                                         <rect key="frame" x="83" y="165" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="Bui-1P-Whx"/>
                                             <constraint firstAttribute="height" constant="85" id="HXB-VW-5Xa"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1e-Dk-gLb"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAi-0c-bYW" userLabel="LR">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAi-0c-bYW" userLabel="LR">
                                         <rect key="frame" x="165" y="165" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="Z0A-g3-4MQ"/>
                                             <constraint firstAttribute="height" constant="85" id="zQv-M4-fB3"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDb-oe-kNO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
