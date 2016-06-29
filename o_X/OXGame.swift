@@ -73,9 +73,10 @@ class OXGame{
     
     func reset(){
         //TODO: RESET BOARD
-        for _ in board {
-            _ = CellType.Empty;
+        for i in 0 ..< board.count {
+            board[i] = CellType.Empty;
         }
+        
         //print("HERBE")
         counter = 0;
     }

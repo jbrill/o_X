@@ -10,17 +10,8 @@ class BoardViewController: UIViewController {
     var gameObject:OXGame = OXGame();
     var flag:Bool = false;
     
-    @IBOutlet weak var UL: UIButton!
-    @IBOutlet weak var UM: UIButton!
-    @IBOutlet weak var UR: UIButton!
-    @IBOutlet weak var MR: UIButton!
+    @IBOutlet weak var boardView: UIView!
     
-    @IBOutlet weak var MM: UIButton!
-    
-    @IBOutlet weak var ML: UIButton!
-    @IBOutlet weak var LL: UIButton!
-    @IBOutlet weak var LM: UIButton!
-    @IBOutlet weak var LR: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,18 +21,14 @@ class BoardViewController: UIViewController {
     @IBAction func newGameButtonPressed(sender: UIButton) {
         //print("New game button pressed.")
         gameObject.reset();
-        let tempString:String = " ";
-        LR.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        LM.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        LL.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        ML.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        MM.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        MR.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        UL.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        UM.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        UR.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
-        flag = false;
         
+        for subview in boardView.subviews {
+            if let button = subview as? UIButton {
+                button.setTitle(" ", forState: .Normal)
+            }
+        }
+        
+        flag = false;
     }
     
     // Create additional IBActions here.
@@ -61,7 +48,7 @@ class BoardViewController: UIViewController {
             tempString = "O";
         }
         
-        sender.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        sender.setTitle(tempString, forState: .Normal)
 
         if(gameObject.state() == OXGameState.Won){
             print("Game won!");
