@@ -44,17 +44,14 @@ class OXGame{
         //TODO
         //checking horizontals
         if((board[0] == board[1] && board[1] == board[2] && board[0] != CellType.Empty) || (board[3] == board[4] && board[4] == board[5] && board[3] != CellType.Empty) || (board[6] == board[7] && board[7] == board[8] && board[6] != CellType.Empty)){
-            print("HERE2")
             return true;
         }
         //checking verticals
         if((board[0] == board[3] && board[3] == board[6] && board[0] != CellType.Empty) || (board[1] == board[4] && board[4] == board[7] && board[1] != CellType.Empty) || (board[2] == board[5] && board[5] == board[8] && board[2] != CellType.Empty)){
-            print("HERE1")
             return true;
         }
         //checking diags
         if((board[0] == board[4] && board[4] == board[8] && board[0] != CellType.Empty) || (board[2] == board[4] && board[4] == board[6] && board[2] != CellType.Empty)){
-            print("HERE")
             return true;
         }
         return false;
@@ -72,12 +69,10 @@ class OXGame{
     }
     
     func reset(){
-        //TODO: RESET BOARD
         for i in 0 ..< board.count {
             board[i] = CellType.Empty;
         }
         
-        //print("HERBE")
         counter = 0;
     }
     
