@@ -5,38 +5,22 @@
 
 import UIKit
 
-/*class CreditCard{
-    //var num;
-}
-
-class User{
-    init(email_:String, password_:String?, firstName_:String, lastName_:String, middleName_:String?, creditCard_:CreditCard?){
-        email = email_;
-        password = password_;
-        firstName = firstName_;
-        middleName = middleName_;
-        CreditCard = creditCard_;
-    }
-    
-    var email:String;
-    var password:String?;
-    var firstName:String;
-    var lastName:String;
-    var middleName:String?;
-    var creditCard:CreditCard?
-}*/
-
 class BoardViewController: UIViewController {
-
-    // Create additional IBOutlets here.
-   // var creditCard:CreditCard;
-   // User user = ("Jbrill@gmail.com", "Hello", "Jason", "Brill", "Louis", creditCard);
     @IBOutlet weak var newGameButton: UIButton!
-    var myChars = [Character](count: 9, repeatedValue: " ")
-    var counter:Int = 0;
+    var gameObject:OXGame = OXGame();
+    var flag:Bool = false;
     
-    //counter = 0;
+    @IBOutlet weak var UL: UIButton!
+    @IBOutlet weak var UM: UIButton!
+    @IBOutlet weak var UR: UIButton!
+    @IBOutlet weak var MR: UIButton!
     
+    @IBOutlet weak var MM: UIButton!
+    
+    @IBOutlet weak var ML: UIButton!
+    @IBOutlet weak var LL: UIButton!
+    @IBOutlet weak var LM: UIButton!
+    @IBOutlet weak var LR: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,22 +29,45 @@ class BoardViewController: UIViewController {
     
     @IBAction func newGameButtonPressed(sender: UIButton) {
         //print("New game button pressed.")
-        counter = 0;
+        gameObject.reset();
+        let tempString:String = " ";
+        LR.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        LM.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        LL.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        ML.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        MM.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        MR.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        UL.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        UM.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        UR.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+        flag = false;
+        
     }
     
     // Create additional IBActions here.
-    @IBAction func boardTapped(sender: UIButton) {
-        if(counter%2 == 0){
-            //print(sender.tag)
-            myChars[Int(sender.tag)] = "X";
-            sender.setAttributedTitle(NSAttributedString(string: "X"), forState: UIControlState.Normal)
-        } else {
-            myChars[sender.tag] = "O";
-            sender.setAttributedTitle(NSAttributedString(string: "O"), forState: UIControlState.Normal)
+        @IBAction func boardTapped(sender: UIButton) {
+        if(gameObject.state() != OXGameState.InProgress && flag == true){
+            print("The game is over. please press new game.")
+            return;
         }
-        counter += 1;
         
-        //print("board tapped \(sender.tag)")
+        flag = true;
+        gameObject.turnCount();
+        let temp:CellType = gameObject.playMove(sender.tag);
+        var tempString:String = "";
+        if(temp == CellType.X){
+            tempString = "X";
+        } else if (temp == CellType.O){
+            tempString = "O";
+        }
+        
+        sender.setAttributedTitle(NSAttributedString(string: tempString), forState: UIControlState.Normal)
+
+        if(gameObject.state() == OXGameState.Won){
+            print("Game won!");
+        } else if (gameObject.state() == OXGameState.Tie){
+            print("Game tied!")
+        }
     }
     
 

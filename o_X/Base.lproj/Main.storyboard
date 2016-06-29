@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -224,6 +224,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="LL" destination="1HN-LR-oDu" id="3NA-Sx-Uk2"/>
+                        <outlet property="LM" destination="gMX-mB-WZF" id="mF0-r0-eyc"/>
+                        <outlet property="LR" destination="PAi-0c-bYW" id="wOr-g4-Hb4"/>
+                        <outlet property="ML" destination="YV5-Ow-EAK" id="drj-pG-ros"/>
+                        <outlet property="MM" destination="peu-aP-PCw" id="kb5-Su-pIA"/>
+                        <outlet property="MR" destination="G19-iD-kTS" id="gBX-E1-kiP"/>
+                        <outlet property="UL" destination="jKb-fI-v96" id="u6X-jd-gAt"/>
+                        <outlet property="UM" destination="UBl-Gp-qxt" id="LeX-XZ-Bx4"/>
+                        <outlet property="UR" destination="mCu-Xc-LK3" id="pBH-ny-Acp"/>
                         <outlet property="newGameButton" destination="Ywl-uk-iqy" id="HMW-vT-fdK"/>
                     </connections>
                 </viewController>
