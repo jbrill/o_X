@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o_X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8H-FO-CFB">
                                 <rect key="frame" x="276" y="60" width="48" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.49019607843137253" green="0.2196078431372549" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.70430046778257627" green="0.31535842157522015" blue="0.70596130279034686" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywl-uk-iqy">
@@ -80,7 +80,7 @@
                                             <constraint firstAttribute="width" constant="85" id="dci-eP-6eF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZJS-HZ-lY3"/>
                                         </connections>
@@ -94,7 +94,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="mFk-Ab-ruG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Umb-RU-u4I"/>
@@ -112,7 +112,7 @@
                                             <constraint firstAttribute="height" constant="85" id="y4w-5h-rvF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSS-C1-4V6"/>
                                         </connections>
@@ -124,7 +124,7 @@
                                             <constraint firstAttribute="width" constant="85" id="fxW-J6-7KX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gY-yv-4kI"/>
                                         </connections>
@@ -136,7 +136,7 @@
                                             <constraint firstAttribute="width" constant="85" id="VmY-Y6-xid"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ixg-Hj-CeD"/>
                                         </connections>
@@ -148,7 +148,7 @@
                                             <constraint firstAttribute="width" constant="85" id="kc0-JP-dhK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ndh-ck-nCs"/>
                                         </connections>
@@ -160,7 +160,7 @@
                                             <constraint firstAttribute="width" constant="85" id="aA6-Pm-G9y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ckw-7t-81K"/>
                                         </connections>
@@ -172,7 +172,7 @@
                                             <constraint firstAttribute="height" constant="85" id="HXB-VW-5Xa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1e-Dk-gLb"/>
                                         </connections>
@@ -184,7 +184,7 @@
                                             <constraint firstAttribute="height" constant="85" id="zQv-M4-fB3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="tintColor" red="0.91764705879999997" green="0.86666666670000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDb-oe-kNO"/>
                                         </connections>

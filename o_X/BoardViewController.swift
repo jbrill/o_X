@@ -16,6 +16,7 @@ class BoardViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        newGameButton.hidden = true;
     }
     
     func cancelGame(){
@@ -33,31 +34,58 @@ class BoardViewController: UIViewController {
         cancelGame();
         
         flag = false;
+        
+        newGameButton.hidden = true;
     }
     
     // Create additional IBActions here.
     @IBAction func boardTapped(sender: UIButton) {
         if(gameObject.getCurrentGame().state() != OXGameState.InProgress && flag == true){
-            print("The game is over. please press new game.")
+            let alert = UIAlertController(title: "Error", message: "Game is over. Press new game", preferredStyle:  UIAlertControllerStyle.Alert)
+            
+            let alertAction = UIAlertAction(title: "OK", style: .Default, handler: {(action) in
+                //closure code
+            })
+            
+            alert.addAction(alertAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
             return;
         }
         
         flag = true;
-        let temp:CellType = gameObject.playMove(sender.tag);
-        var tempString:String = "";
-        
-        if(temp == CellType.X){
-            tempString = "X";
-        } else if (temp == CellType.O){
-            tempString = "O";
+        let temp:CellType;
+        if(gameObject.getCurrentGame().getMove(sender.tag) != CellType.Empty){
+            let alert = UIAlertController(title: "Error", message: "Do not click on an already used square", preferredStyle:  UIAlertControllerStyle.Alert)
+            
+            let alertAction = UIAlertAction(title: "OK", style: .Default, handler: {(action) in
+                //Closure Code
+            })
+            
+            alert.addAction(alertAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
-        sender.setTitle(tempString, forState: .Normal)
+        temp = gameObject.playMove(sender.tag)
+        
+        sender.setTitle(temp.rawValue, forState: .Normal)
 
         if(gameObject.getCurrentGame().state() == OXGameState.Won){
-            print("Game won!");
+            let alert = UIAlertController(title: "Game Over", message: "Player \(temp.rawValue) Won!", preferredStyle:  UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: {(action) in
+                self.newGameButton.hidden = false;
+            })
+            alert.addAction(alertAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
         } else if (gameObject.getCurrentGame().state() == OXGameState.Tie){
-            print("Game tied!")
+            let alert = UIAlertController(title: "Game Over", message: "Tie!", preferredStyle:  UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: {(action) in
+                self.newGameButton.hidden = false;
+            })
+            alert.addAction(alertAction)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     

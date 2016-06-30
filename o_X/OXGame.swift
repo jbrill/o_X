@@ -5,7 +5,7 @@
 //  Created by Jason Brill on 6/29/16.
 //  Copyright © 2016 iX. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
 enum CellType : String {
@@ -36,7 +36,15 @@ class OXGame{
     }
     
     func playMove(move_:Int) -> CellType{
-        board[move_] = whoseTurn();
+        if(board[move_] == CellType.Empty){
+            board[move_] = whoseTurn();
+            return board[move_];
+        } else {
+            return board[move_];
+        }
+    }
+    
+    func getMove(move_:Int) ->CellType{
         return board[move_];
     }
     
@@ -62,7 +70,7 @@ class OXGame{
         if(gameWon()){
             return OXGameState.Won;
         }
-        if(counter == 9 && !gameWon()){
+        if(counter == 8 && !gameWon()){
             return OXGameState.Tie;
         }
         return OXGameState.InProgress;
