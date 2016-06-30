@@ -27,6 +27,14 @@ class BoardViewController: UIViewController {
         }
     }
     
+    @IBAction func logoutButtonPressed(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        let application = UIApplication.sharedApplication()
+        let window = application.keyWindow
+        window?.rootViewController = viewController
+    }
+    
     @IBAction func newGameButtonPressed(sender: UIButton) {
         //print("New game button pressed.")
         gameObject.restartGame();
