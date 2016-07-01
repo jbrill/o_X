@@ -96,7 +96,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="registerButtonPressed:" destination="E9g-y2-h7A" eventType="touchUpInside" id="fA5-J3-nPo"/>
+                                    <action selector="loginButtonPressed:" destination="ltH-PM-iUb" eventType="touchUpInside" id="Sma-3j-aVE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVF-kz-qSq" userLabel="EmailText">
@@ -138,8 +138,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="FVF-kz-qSq" id="Cjz-G8-tQe"/>
-                        <outlet property="passwordField" destination="rFY-mV-JwQ" id="lH4-Zd-sjC"/>
+                        <outlet property="emailInput" destination="FVF-kz-qSq" id="ckY-S8-U5l"/>
+                        <outlet property="passwordInput" destination="rFY-mV-JwQ" id="K73-Td-l5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCJ-xe-HHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,7 +251,7 @@
                                     <color key="titleColor" red="0.80392156859999997" green="0.5450980392" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerButtonPressed:" destination="E9g-y2-h7A" eventType="touchUpInside" id="4cZ-ap-xYO"/>
+                                    <action selector="registerButtonPressed:" destination="E9g-y2-h7A" eventType="touchUpInside" id="H2d-zJ-xXz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyY-Ru-YXj">

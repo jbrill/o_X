@@ -133,13 +133,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peu-aP-PCw" userLabel="MM">
-                                        <rect key="frame" x="80" y="80" width="85" height="85"/>
+                                        <rect key="frame" x="85" y="85" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="Hin-gy-JQb"/>
                                             <constraint firstAttribute="width" constant="85" id="VmY-Y6-xid"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Hin-gy-JQb"/>
+                                                <exclude reference="VmY-Y6-xid"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="boardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ixg-Hj-CeD"/>
                                         </connections>

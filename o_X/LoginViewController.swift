@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
                 alert.addAction(alertAction)
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
+                //print("HEre")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateInitialViewController()
                 let application = UIApplication.sharedApplication()
