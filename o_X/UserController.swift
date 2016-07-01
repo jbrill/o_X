@@ -37,12 +37,12 @@ class UserController {
             return
         }
         
-        for user in userArray{
+        /*for user in userArray{
             if(user == currUser){
                 onCompletion(nil, "You already have an account!")
                 return
             }
-        }
+        }*/
         
         userArray.append(currUser)
         currentLoggedInUser = currUser

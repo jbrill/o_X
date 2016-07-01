@@ -22,11 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             uc.register(email, password: password) { user, message in
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateInitialViewController()
-                let application = UIApplication.sharedApplication()
-                let window = application.keyWindow
-                window?.rootViewController = viewController
+                //let application = UIApplication.sharedApplication()
+                //let window = AppDelegate.keyWindow
+                self.window!.rootViewController = viewController
             }
-            
         }
         // Override point for customization after application launch.
         return true
