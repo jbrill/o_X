@@ -26,4 +26,10 @@ class OXGameController {
         let temp:CellType = currentGame.playMove(tag_);
         return temp;
     }
+    
+    func getGames(onCompletion onCompletion: ([OXGame]?, String?) -> Void){
+        let dumArr:[OXGame] = []
+        onCompletion(dumArr, "String")
+        return
+    }
 }

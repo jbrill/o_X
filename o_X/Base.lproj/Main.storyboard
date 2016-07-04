@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sS-lQ-ABR" userLabel="Logout">
-                                <rect key="frame" x="273" y="511" width="55" height="30"/>
+                                <rect key="frame" x="323" y="511" width="55" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WyC-UO-jnh"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="bA6-U9-wIT"/>
@@ -253,15 +253,31 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GP-MZ-jmJ">
+                                <rect key="frame" x="190" y="511" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Ug-Zs-d0B"/>
+                                    <constraint firstAttribute="width" constant="120" id="abw-Ki-gaT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Network Play">
+                                    <color key="titleColor" red="0.80392156859999997" green="0.5450980392" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="alC-Dx-y2b" kind="presentation" id="9vK-Br-Bnq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81226220141744965" green="0.8666666666999987" blue="0.96862745100000003" alpha="0.18612607758620689" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="K8H-FO-CFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2O8-Yc-8VC"/>
                             <constraint firstItem="9sS-lQ-ABR" firstAttribute="top" secondItem="Ywl-uk-iqy" secondAttribute="bottom" constant="30" id="FoN-Te-FSr"/>
-                            <constraint firstItem="9sS-lQ-ABR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LBl-O4-Et2"/>
+                            <constraint firstItem="5GP-MZ-jmJ" firstAttribute="top" secondItem="Ywl-uk-iqy" secondAttribute="bottom" constant="30" id="Hkp-yu-dnQ"/>
+                            <constraint firstItem="5GP-MZ-jmJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="Jlt-pF-eWz"/>
                             <constraint firstItem="Ywl-uk-iqy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="Pdw-nV-czY"/>
                             <constraint firstItem="K8H-FO-CFB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="60" id="REM-gf-dGw"/>
                             <constraint firstItem="GY3-RS-XfY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gmd-NZ-psM"/>
+                            <constraint firstItem="9sS-lQ-ABR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50" id="m8e-ot-fYn"/>
                             <constraint firstItem="GY3-RS-XfY" firstAttribute="top" secondItem="K8H-FO-CFB" secondAttribute="bottom" constant="60" id="oYh-Km-Ru5"/>
                             <constraint firstItem="Ywl-uk-iqy" firstAttribute="top" secondItem="GY3-RS-XfY" secondAttribute="bottom" constant="45" id="yVT-Ez-2Gk"/>
                         </constraints>
@@ -274,6 +290,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="355"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="hsm-vz-sEE">
+            <objects>
+                <tableViewController id="NGT-vn-3Th" customClass="NetworkGamesViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gGk-1l-QyR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gXO-GI-cDG">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXO-GI-cDG" id="oAU-gQ-sdI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NGT-vn-3Th" id="rnr-3Y-owO"/>
+                            <outlet property="delegate" destination="NGT-vn-3Th" id="QG0-hs-C4E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="hbq-ji-x6T">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="1jk-Wk-hiJ">
+                            <connections>
+                                <action selector="backAction:" destination="NGT-vn-3Th" id="ITv-kJ-oWX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YX7-eI-Z4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850" y="355"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xgg-pp-3dC">
+            <objects>
+                <navigationController id="alC-Dx-y2b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8S6-8g-oCd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NGT-vn-3Th" kind="relationship" relationship="rootViewController" id="D4t-IR-Fxm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIp-pH-Vdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="355"/>
         </scene>
     </scenes>
 </document>
