@@ -9,6 +9,7 @@ class BoardViewController: UIViewController {
     @IBOutlet weak var newGameButton: UIButton!
     var gameObject:OXGameController = OXGameController();
     var flag:Bool = false;
+    var networkMode:Bool = false;
     
     @IBOutlet weak var boardView: UIView!
     
@@ -16,13 +17,44 @@ class BoardViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        newGameButton.hidden = true;
+        newGameButton.hidden = true
+        //if(networkMode){
+            updateUI()
+        //}
     }
     
     func cancelGame(){
         for subview in boardView.subviews {
             if let button = subview as? UIButton {
                 button.setTitle(" ", forState: .Normal)
+            }
+        }
+    }
+    
+    
+    /*
+     * BoardViewController's updateUI() function
+     * Although we haven't completed full network functionality yet,
+     * this function will come in handy when we have to display our opponents moves
+     * that we obtain from the networking layers (more on that later)
+     * For now, you are required to implement this function in connection with Activity 1 from todays class
+     * Hint number 1: This function must set the values of O and X on the board, based on the games board array values. Does this kind of remind you of the resetBoard or newGameTapped function???
+     * Hint number 2: if you set your board array to private in the OXGame class, maybe you should set it now to 'not private' ;)
+     * Hint number 3: call this function in BoardViewController's viewDidLoad function to see it execute what board was set in the game's initialiser on your screen!
+     * And Go!
+     */
+    func updateUI() {
+        for subview in 0..<boardView.subviews.count {
+            if let button = boardView.subviews[subview] as? UIButton {
+                
+                if(gameObject.getCurrentGame().board[button.tag] == CellType.X){
+                    button.setTitle("X", forState: .Normal)
+                } else if (gameObject.getCurrentGame().board[button.tag] == CellType.O){
+                   button.setTitle("O", forState: .Normal)
+                } else {
+                    button.setTitle(" ", forState: .Normal)
+                }
+                
             }
         }
     }

@@ -9,6 +9,8 @@
 import UIKit
 
 class NetworkGamesViewController: UITableViewController {
+    
+    var myGameArr:[OXGame] = []
 
     @IBAction func backAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)    }
@@ -21,6 +23,11 @@ class NetworkGamesViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let gc = OXGameController.sharedInstance;
+        gc.getGames{ games, message in
+            self.myGameArr = games!
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +44,14 @@ class NetworkGamesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let gc = OXGameController.sharedInstance;
-        gc.getGames{ games, message in
-            return games?.count
-        }
-        return 0
+        return self.myGameArr.count;
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell Identifier", forIndexPath: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = self.myGameArr[indexPath.row].host;
         return cell
     }
     

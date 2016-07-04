@@ -29,7 +29,7 @@ class OXGameController {
     
     func getGames(onCompletion onCompletion: ([OXGame]?, String?) -> Void){
         let dumArr:[OXGame] = []
-        onCompletion(dumArr, "String")
+        onCompletion(dumArr, nil)
         return
     }
 }
