@@ -187,10 +187,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TicTacToe" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-do-X5T">
-                                <rect key="frame" x="158" y="160" width="286" height="116"/>
+                                <rect key="frame" x="203" y="191" width="195" height="79"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="116" id="F8N-9A-pxE"/>
-                                    <constraint firstAttribute="width" constant="286" id="scM-uk-pAY"/>
+                                    <constraint firstAttribute="height" constant="79" id="F8N-9A-pxE"/>
+                                    <constraint firstAttribute="width" constant="195" id="scM-uk-pAY"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -198,7 +198,7 @@
                         <constraints>
                             <constraint firstItem="VLh-do-X5T" firstAttribute="centerX" secondItem="QLP-AI-BxL" secondAttribute="centerX" constant="1" id="CkV-JF-X0L"/>
                             <constraint firstAttribute="trailing" secondItem="GqE-bk-Aog" secondAttribute="trailing" constant="175" id="MDr-gO-0EM"/>
-                            <constraint firstItem="VLh-do-X5T" firstAttribute="top" secondItem="QLP-AI-BxL" secondAttribute="top" constant="160" id="dOr-hu-cDC"/>
+                            <constraint firstItem="VLh-do-X5T" firstAttribute="top" secondItem="QLP-AI-BxL" secondAttribute="top" constant="191" id="dOr-hu-cDC"/>
                             <constraint firstAttribute="bottom" secondItem="GqE-bk-Aog" secondAttribute="bottom" constant="200" id="fOI-H8-k9Y"/>
                             <constraint firstItem="7Gx-Mr-5ts" firstAttribute="leading" secondItem="QLP-AI-BxL" secondAttribute="leadingMargin" constant="175" id="rTA-Bg-Vbc"/>
                             <constraint firstAttribute="bottomMargin" secondItem="7Gx-Mr-5ts" secondAttribute="bottom" constant="200" id="snJ-v8-aV3"/>

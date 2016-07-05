@@ -9,11 +9,15 @@
 import Foundation
 
 class User {
-    init(email: String, password: String) {
-        self.email = email;
-        self.password = password;
+    init(email: String, password: String, token: String, client: String) {
+        self.email = email
+        self.password = password
+        self.token = token
+        self.client = client
     }
     
-    var email: String;
-    var password: String;
+    var email: String
+    var password: String
+    var token:String
+    var client:String
 }

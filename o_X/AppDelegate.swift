@@ -4,10 +4,12 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    //Alamofire.request(.GET, "https://httpbin.org/get")
+    
     var window: UIWindow?
 
 

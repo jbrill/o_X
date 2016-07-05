@@ -315,7 +315,7 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -437,8 +437,8 @@
                                         <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="dLY-YF-7nB"/>
                                                 <exclude reference="JUs-I1-LYi"/>
+                                                <exclude reference="dLY-YF-7nB"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -467,8 +467,8 @@
                                         <color key="tintColor" red="0.7043004678" green="0.31535842159999999" blue="0.70596130280000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="lol-pL-aY6"/>
                                                 <exclude reference="Mf1-i2-Mo5"/>
+                                                <exclude reference="lol-pL-aY6"/>
                                             </mask>
                                         </variation>
                                         <connections>
