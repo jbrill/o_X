@@ -33,7 +33,7 @@ class WebService {
         return request
     }
     
-    func executeRequest (urlRequest:Request, presentingViewController:UIViewController? = nil, requestCompletionFunction:(Int,JSON) -> ())  {
+    func executeRequest(urlRequest:Request, requestCompletionFunction:(Int,JSON) -> ())  {
         
         //add a loading overlay over the presenting view controller, as we are about to wait for a web request
         //presentingViewController?.addLoadingOverlay()
@@ -63,65 +63,15 @@ class WebService {
                     json["data"]["client"] = clientJson
                 }
                 
-                
-                
-                if (self.handleCommonResponses(serverResponseCode, presentingViewController: presentingViewController))    {
-                    //print to the console that we experienced a common erroneos response
-                    print("A common bad server response was found, error has been displayed")
-                    
-                }
-                
                 //execute the completion function specified by the class that called this executeRequest function
                 //the
                 requestCompletionFunction(serverResponseCode,json)
                 
-            }   else    { //response code is nil - The web service couldn't connect to the internet. Show a "Connection Error" alert, assuming the presentingViewController was given (a UIViewController provided as the presentingViewController parameter provides the ability to show an alert)
-                let alert = self.connectionErrorAlert()
-                presentingViewController?.presentViewController(alert, animated: true, completion: nil)
+            } else { //response code is nil - The web service couldn't connect to the internet. Show a "Connection Error" alert, assuming the presentingViewController was given (a UIViewController provided as the presentingViewController parameter provides the ability to show an alert)
                 //execute the completion function specified by the class that called this executeRequest function
-                requestCompletionFunction(0,JSON(""))
+                requestCompletionFunction(0,JSON("{ errors: { full_messages: [ \"Could not connect.\" ] } }"))
             }
         }
-    }
-    
-    
-    //used by the executeRequest function to show that the app experienced a connection error
-    func connectionErrorAlert() -> UIAlertController {
-        let alert = UIAlertController(title:"Connection Error", message:"Not connected", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        return alert
-    }
-    
-    //used by the executeRequest function to show that the app experienced a backend server error
-    func server500Alert() -> UIAlertController {
-        let alert = UIAlertController(title:"Oh Dear", message:"There was an problem handling your request", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        return alert
-    }
-    
-    //used by the executeRequest function to check if the app should show any common network errors in an alert
-    //returns true if an error and the corresponding alert was activated, or false if no errors were found
-    func handleCommonResponses(responseCode:Int, presentingViewController:UIViewController?) -> Bool {
-        //handle session expiry
-        if (responseCode == 302)   {
-            
-            //we are not going to experience this response, yet. This code will never execute
-            return true
-            
-            
-        }   else if (responseCode == 500)  {
-            
-            if let vc = presentingViewController   {
-                
-                let alert = server500Alert()
-                vc.presentViewController(alert, animated: true, completion: nil)
-                return true
-            }
-            
-            
-        }
-        
-        return false //returning false indicates that no errors were detected
     }
     
 }

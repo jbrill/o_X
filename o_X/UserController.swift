@@ -9,23 +9,11 @@
 import Foundation
 import Alamofire
 
-func ==(lhs: User, rhs: User) -> Bool {
-    if (lhs.email == rhs.email && rhs.password == lhs.password){
-        return true
-    }
-    return false
-}
-
 class UserController : WebService {
     static var sharedInstance:UserController = UserController()
     //private init() {}
     
     var currentLoggedInUser: User? //current logged in user
-    
-    func createUser(email: String, password: String, token: String, client: String) -> User{
-        let currentUser: User = User(email: email, password: password, token: token, client: client)
-        return currentUser
-    }
     
     func getLoggedInUser() -> User? {
         return currentLoggedInUser
@@ -36,20 +24,14 @@ class UserController : WebService {
     func register(email: String, password: String, onCompletion: (User?, String?) -> Void){
         print("HERE")
         let user = ["email" : email, "password" : password]
-        let request = self.createMutableRequest(NSURL(string: "https://ox-backend.herokuapp.com/auth"), method: "POST", parameters: user)
+        let request = self.createMutableAnonRequest(NSURL(string: "https://ox-backend.herokuapp.com/auth"), method: "POST", parameters: user)
         
         self.executeRequest(request, requestCompletionFunction: {responseCode, json in
-            if (responseCode == 200) {
+            if (responseCode / 100 == 2) {
                 //if the responseCode is 2xx (any responseCode in the 200's range is a success case. For example, some servers return 201 for successful object creation)
                 //successfully registered user. get the obtained data from the json response data and create the user object to give back to the calling ViewController
-                let currUser = self.createUser(json["data"]["email"].stringValue, password:"not_given_and_not_stored", token: json["data"]["token"].stringValue, client: json["data"]["client"].stringValue)
                 
-                if (currUser.password.characters.count < 6){
-                    //ERROR CHECK
-                    onCompletion(nil, "Your password must be at least 6 characters.")
-                    return
-
-                }
+                let currUser = User(email: json["data"]["email"].stringValue, token: json["data"]["token"].stringValue, client: json["data"]["client"].stringValue)
                 
                 //and while we still at it, lets set the user as logged in. This is good programming as we are keeping all the user management inside the UserController and handling it at the right time
                 self.currentLoggedInUser = currUser
@@ -60,8 +42,8 @@ class UserController : WebService {
                 self.currentLoggedInUser = currUser
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(self.currentLoggedInUser?.email, forKey: "currentUserEmail")
-                defaults.setObject(self.currentLoggedInUser?.password, forKey: "currentUserPassword")
+                defaults.setObject(email, forKey: "currentUserEmail")
+                defaults.setObject(password, forKey: "currentUserPassword")
                 defaults.synchronize()
                 onCompletion(currUser,nil)
                 return
@@ -80,24 +62,20 @@ class UserController : WebService {
     
     func login(email: String, password: String, onCompletion: (User?, String?) -> Void){
         let user = ["email" : email, "password" : password]
-        let request = self.createMutableRequest(NSURL(string: "https://ox-backend.herokuapp.com/auth/sign_in"), method: "POST", parameters: user)
+        let request = self.createMutableAnonRequest(NSURL(string: "https://ox-backend.herokuapp.com/auth/sign_in"), method: "POST", parameters: user)
         
         self.executeRequest(request, requestCompletionFunction: {responseCode, json in
             if (responseCode == 200) {
                 //if the responseCode is 2xx (any responseCode in the 200's range is a success case. For example, some servers return 201 for successful object creation)
                 //successfully registered user. get the obtained data from the json response data and create the user object to give back to the calling ViewController
-                let currUser = self.createUser(json["data"]["email"].stringValue, password:"not_given_and_not_stored", token: json["data"]["token"].stringValue, client: json["data"]["client"].stringValue)
+                let currUser = User(email: json["data"]["email"].stringValue, token: json["data"]["token"].stringValue, client: json["data"]["client"].stringValue)
                 
-                for user in self.userArray{
-                    if(user == currUser){
-                        onCompletion(currUser, nil)
-                        self.currentLoggedInUser = currUser
-                        let defaults = NSUserDefaults.standardUserDefaults()
-                        defaults.setObject(self.currentLoggedInUser?.email, forKey: "currentUserEmail")
-                        defaults.setObject(self.currentLoggedInUser?.password, forKey: "currentUserPassword")
-                        defaults.synchronize()
-                    }
-                }
+                self.currentLoggedInUser = currUser
+                let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setObject(email, forKey: "currentUserEmail")
+                    defaults.setObject(password, forKey: "currentUserPassword")
+                defaults.synchronize()
+                onCompletion(currUser, nil)
                 
                 return
             } else {
@@ -113,6 +91,7 @@ class UserController : WebService {
     func logout(onCompletion onCompletion: (String?) -> Void){
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.removeObjectForKey("currentUserEmail")
+        defaults.removeObjectForKey("currentUserPassword")
         defaults.synchronize()
         
         currentLoggedInUser = nil;
