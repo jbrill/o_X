@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -268,7 +268,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.81226220141744965" green="0.8666666666999987" blue="0.96862745100000003" alpha="0.18612607758620689" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="K8H-FO-CFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2O8-Yc-8VC"/>
                             <constraint firstItem="9sS-lQ-ABR" firstAttribute="top" secondItem="Ywl-uk-iqy" secondAttribute="bottom" constant="30" id="FoN-Te-FSr"/>
@@ -291,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="305" y="355"/>
         </scene>
-        <!--Title-->
+        <!--Available Games-->
         <scene sceneID="hsm-vz-sEE">
             <objects>
                 <tableViewController id="NGT-vn-3Th" customClass="NetworkGamesViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
@@ -328,7 +328,7 @@
                             <outlet property="delegate" destination="NGT-vn-3Th" id="QG0-hs-C4E"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="hbq-ji-x6T">
+                    <navigationItem key="navigationItem" title="Available Games" id="hbq-ji-x6T">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="1jk-Wk-hiJ">
                             <connections>
                                 <action selector="backAction:" destination="NGT-vn-3Th" id="ITv-kJ-oWX"/>
@@ -337,6 +337,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HPM-O0-PaR"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="gGk-1l-QyR" id="GcG-Tw-IRP"/>
                         <segue destination="H6W-Dm-iB5" kind="show" id="RVP-CM-Mkp"/>
                     </connections>
                 </tableViewController>
@@ -368,7 +369,7 @@
                         <viewControllerLayoutGuide type="top" id="7UL-lf-nA7"/>
                         <viewControllerLayoutGuide type="bottom" id="lgV-c3-EXE"/>
                     </layoutGuides>
-                    <view key="view" alpha="0.80000001192092896" contentMode="scaleToFill" id="Rh0-v3-PTw">
+                    <view key="view" contentMode="scaleToFill" id="Rh0-v3-PTw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -617,7 +618,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.81226220140000005" green="0.86666666670000003" blue="0.96862745100000003" alpha="0.1861260776" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bsf-ln-SMQ" firstAttribute="centerX" secondItem="Rh0-v3-PTw" secondAttribute="centerX" id="6YN-GZ-DAP"/>
                             <constraint firstItem="bsf-ln-SMQ" firstAttribute="top" secondItem="VdV-Sn-Bxh" secondAttribute="bottom" constant="60" id="9fb-Sb-o99"/>

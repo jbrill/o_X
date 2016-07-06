@@ -87,7 +87,7 @@ class OXGame{
     
     var counter:Int = 0
     var board = [CellType](count: 9, repeatedValue: CellType.Empty)
-    var ID: Int = 0;
+    var ID: String = "";
     var host: String = "";
     
     private func deserialiseBoard(stringin:String) -> [CellType]{
@@ -121,22 +121,28 @@ class OXGame{
         return myString;
     }
     
-    init(){
+    init()
+        {}
+    
+    init(board: String, id: String, host: String){
+        self.board = deserialiseBoard(board)
+        self.ID = id
+        self.host = host
         //we are simulating setting our board from the internet
-        let simulatedBoardStringFromNetwork = "_________" //update this string to different values to test your model serialisation
-        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
-        print(serialiseBoard())
-        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
-            print("start\n------------------------------------")
-            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
-            
-            print("done\n------------------------------------")
-        }   else    {
-            print("start\n------------------------------------")
-            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
-            
-            print("done\n------------------------------------")
-        }
+//        let simulatedBoardStringFromNetwork = "_________" //update this string to different values to test your model serialisation
+//        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
+//        print(serialiseBoard())
+//        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
+//            print("start\n------------------------------------")
+//            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
+//            
+//            print("done\n------------------------------------")
+//        }   else    {
+//            print("start\n------------------------------------")
+//            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
+//            
+//            print("done\n------------------------------------")
+//        }
         
     }
 }

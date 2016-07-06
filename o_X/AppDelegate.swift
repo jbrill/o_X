@@ -18,14 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let email = defaults.stringForKey("currentUserEmail"),
-            password = defaults.stringForKey("currentUserPassword") {
+            token = defaults.stringForKey("currentUserToken"), client = defaults.stringForKey("currentUserClient"){
             
-            let uc = UserController.sharedInstance
-            uc.register(email, password: password) { user, message in
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = storyboard.instantiateInitialViewController()
-                self.window!.rootViewController = viewController
-            }
+            UserController.sharedInstance.currentLoggedInUser = User(email: email, token: token, client: client)
+            
+            OXGameController.sharedInstance.getGames(onCompletion: {games, message in
+                if(games != nil){
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let viewController = storyboard.instantiateInitialViewController()
+                    self.window!.rootViewController = viewController
+                } else {
+                    UserController.sharedInstance.currentLoggedInUser = nil
+                }
+            })
+            
+            
         }
         // Override point for customization after application launch.
         return true

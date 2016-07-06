@@ -8,22 +8,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     @IBAction func loginButtonPressed(sender: AnyObject) {
         let uc = UserController.sharedInstance
@@ -43,6 +31,18 @@ class LoginViewController: UIViewController {
                 window?.rootViewController = viewController
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        emailInput.delegate = self
+        passwordInput.delegate = self
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        loginButtonPressed(textField)
+        return true
     }
     
     /*

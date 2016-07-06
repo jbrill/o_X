@@ -18,7 +18,12 @@ class WebService {
     func createMutableRequest(url:NSURL!,method:String!,parameters:Dictionary<String, String>?) -> Request  {
         
         // build request
-        let headers = ["access-Token":UserController.sharedInstance.getLoggedInUser()!.token, "client": UserController.sharedInstance.getLoggedInUser()!.client, "uid":UserController.sharedInstance.getLoggedInUser()!.email, "token-type":"bearer"]
+        let headers = ["access-Token":UserController.sharedInstance.getLoggedInUser()!.token, "client": UserController.sharedInstance.getLoggedInUser()!.client, "uid":UserController.sharedInstance.getLoggedInUser()!.email, "token-Type":"bearer"]
+        
+        print(headers)
+        
+//print(headers["Uid"]!)
+//print(headers["Token-Type"]!)
         let request = Alamofire.request(Method(rawValue:method)!, url, parameters: parameters, encoding: .URL, headers: headers)
         
         return request
