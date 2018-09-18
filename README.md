@@ -1,3 +1,3 @@
 # o_X
 
-Jason Brill
+A simple Tic Tac Toe simulator for iOS built on Swift.
